@@ -18,7 +18,7 @@ function Navbar() {
           href="/"
         >
           <img
-            src="/Logo.webp"
+            src="/PrabhaVi-AI/Logo.webp"
             alt="Logo"
             width="45"
             height="45"
