@@ -18,7 +18,7 @@ function Navbar() {
           href="/"
         >
           <img
-            src={`${process.env.PUBLIC_URL}/Logo.webp`}
+            src="/Logo.webp"
             alt="Logo"
             width="45"
             height="45"
