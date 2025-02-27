@@ -25,7 +25,7 @@ function About() {
               }}
             >
               <img
-                src="/Logo.webp"
+                src={`${process.env.PUBLIC_URL}/Logo.webp`}
                 alt="AI Illustration"
                 className="img-fluid mt-2"
                 style={{ borderRadius: "10px", maxWidth: "60%" }}
