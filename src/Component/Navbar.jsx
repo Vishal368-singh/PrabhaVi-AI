@@ -1,5 +1,7 @@
 import React from "react";
-
+import { Link } from "react-router-dom";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap/dist/js/bootstrap.bundle.min.js";
 
 function Navbar() {
   return (
@@ -13,9 +15,9 @@ function Navbar() {
     >
       <div className="container">
         {/* Logo & Brand */}
-        <a
+        <Link
           className="navbar-brand fw-bold text-dark d-flex align-items-center"
-          href="/"
+          to="/"
         >
           <img
             src="/PrabhaVi-AI/Logo.webp"
@@ -25,7 +27,7 @@ function Navbar() {
             className="me-2 rounded-circle border border-warning"
           />
           <span style={{ color: "#d4af37" }}>Prabhavi</span> AI
-        </a>
+        </Link>
 
         {/* Mobile Menu Button */}
         <button
@@ -33,6 +35,9 @@ function Navbar() {
           type="button"
           data-bs-toggle="collapse"
           data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
         >
           <span className="navbar-toggler-icon"></span>
         </button>
@@ -40,29 +45,26 @@ function Navbar() {
         {/* Navbar Links */}
         <div className="collapse navbar-collapse" id="navbarNav">
           <ul className="navbar-nav ms-auto">
-            {["About", "Services", "Feedback", "Contact"].map((item) => (
-              <li className="nav-item" key={item}>
-                <a
-                  className="nav-link fw-semibold px-3"
-                  href={`#${item.toLowerCase()}`}
-                  style={{
-                    color: "#333",
-                    transition: "0.3s",
-                  }}
-                  onMouseEnter={(e) => {
-                    e.target.style.color = "#d4af37";
-                    e.target.style.textShadow =
-                      "0 0 8px rgba(212, 175, 55, 0.8)";
-                  }}
-                  onMouseLeave={(e) => {
-                    e.target.style.color = "#333";
-                    e.target.style.textShadow = "none";
-                  }}
-                >
-                  {item}
-                </a>
-              </li>
-            ))}
+            <li className="nav-item">
+              <Link className="nav-link fw-semibold px-3" to="/">
+                Home
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link className="nav-link fw-semibold px-3" to="/services">
+                Services
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link className="nav-link fw-semibold px-3" to="/feedback">
+                Feedback
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link className="nav-link fw-semibold px-3" to="/contact-us">
+                Contact
+              </Link>
+            </li>
           </ul>
         </div>
       </div>

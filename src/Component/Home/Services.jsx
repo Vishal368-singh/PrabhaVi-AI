@@ -16,7 +16,7 @@ function Services() {
   const navigate = useNavigate();
 
   const services = [
-    { name: "Image Enhancer", icon: <FaMagic />, path: "#" },
+    { name: "Image Enhancer", icon: <FaMagic />, path: "/image-enhancer" },
     {
       name: "Background Remover",
       icon: <FaEraser />,
@@ -24,7 +24,11 @@ function Services() {
     },
     { name: "AI Chatbot", icon: <FaBrain />, path: "#" },
     { name: "Data Analytics", icon: <FaChartBar />, path: "#" },
-    { name: "Speech Recognition", icon: <FaMicrophone />, path: "#" },
+    {
+      name: "Speech Recognition",
+      icon: <FaMicrophone />,
+      path: "/speech-recognition",
+    },
     { name: "Automated Reports", icon: <FaFileAlt />, path: "#" },
     { name: "AI Security", icon: <FaShieldAlt />, path: "#" },
     { name: "Predictive Analysis", icon: <FaChartLine />, path: "#" },
