@@ -1,51 +1,63 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { FaCheckCircle } from "react-icons/fa";
+import { FaCheckCircle, FaExternalLinkAlt } from "react-icons/fa";
+
+const teamMembers = [
+  {
+    name: "Vishal Singh",
+    role: "Frontend Developer",
+    portfolio: "https://vishal368-singh.github.io/Portfolio/#",
+    image: "/PrabhaVi-AI/Vishal.jpg",
+  },
+  {
+    name: "Prabhat Verma",
+    role: "Backend Developer",
+    portfolio: "https://prabhat.great-site.net/",
+    image: "/PrabhaVi-AI/Prabhat.png",
+  },
+];
 
 function About() {
   return (
     <section id="about" className="py-5" style={{ background: "#f8f9fa" }}>
       <div className="container">
-        <div className="text-center mb-4">
+        {/* Section Title */}
+        <div className="text-center mb-5">
           <h2 className="fw-bold text-dark">
             About <span style={{ color: "#d4af37" }}>Prabhavi AI</span>
           </h2>
-          <p className="text-muted">
+          <p className="text-muted fs-5">
             Empowering businesses with AI-driven automation and innovation.
           </p>
         </div>
 
-        {/* About Content */}
-        <div className="row justify-content-center">
+        {/* About Box */}
+        <div className="row justify-content-center mb-5">
           <div className="col-lg-8">
             <div
-              className="p-4 shadow-sm rounded bg-white text-center"
-              style={{
-                borderLeft: "5px solid #d4af37",
-              }}
+              className="bg-white p-4 shadow rounded-4 text-center"
+              style={{ borderLeft: "5px solid #d4af37" }}
             >
               <img
                 src="/PrabhaVi-AI/Logo.webp"
-                alt="AI Illustration"
-                className="img-fluid mt-2"
-                style={{ borderRadius: "10px", maxWidth: "60%" }}
+                alt="Prabhavi AI Logo"
+                className="img-fluid mb-3"
+                style={{ borderRadius: "12px", maxWidth: "60%" }}
               />
-              <p className="mt-3 text-muted">
-                At Prabhavi AI, we specialize in **cutting-edge AI solutions**
-                that streamline operations, boost efficiency, and drive growth.
-                Our mission is to bring intelligent automation to businesses
-                worldwide.
+              <p className="text-muted fs-6">
+                At Prabhavi AI, we specialize in{" "}
+                <strong>cutting-edge AI solutions</strong> that streamline
+                operations, boost efficiency, and drive growth. Our mission is
+                to bring intelligent automation to businesses worldwide.
               </p>
-
-              {/* Key Features */}
-              <div className="mt-3">
+              <div className="mt-4 text-start">
                 {[
                   "AI-powered automation",
                   "Data-driven decision making",
                   "Seamless integration",
                   "Future-proof technology",
-                ].map((feature, index) => (
-                  <p key={index} className="mb-2 text-dark">
+                ].map((feature, idx) => (
+                  <p key={idx} className="text-dark mb-2">
                     <FaCheckCircle className="text-success me-2" />
                     {feature}
                   </p>
@@ -54,7 +66,87 @@ function About() {
             </div>
           </div>
         </div>
+
+        {/* Team Section */}
+        <div className="text-center mb-4">
+          <h4 className="fw-bold text-dark">👨‍💻 Meet Our Team</h4>
+          <p className="text-muted">The minds behind Prabhavi AI</p>
+        </div>
+
+        <div className="row justify-content-center">
+          {teamMembers.map((member, idx) => (
+            <div className="col-md-4 mb-4" key={idx}>
+              <div className="card border-0 shadow-sm rounded-4 text-center pb-3 position-relative">
+                {/* Profile Image with Circular Crop */}
+                <div
+                  className="position-absolute top-0 start-50 translate-middle"
+                  style={{
+                    width: "120px",
+                    height: "120px",
+                    borderRadius: "50%",
+                    overflow: "hidden",
+                    border: "4px solid #fff",
+                    boxShadow: "0 4px 12px rgba(0,0,0,0.15)",
+                  }}
+                >
+                  <img
+                    src={member.image}
+                    alt={member.name}
+                    style={{
+                      width: "100%",
+                      height: "100%",
+                      objectFit: "cover",
+                      borderRadius: "50%",
+                      objectPosition:
+                        member.name === "Vishal Singh"
+                          ? "center 18%"
+                          : "center",
+                      transform:
+                        member.name === "Vishal Singh"
+                          ? "scale(1)"
+                          : "scale(1.1)",
+                    }}
+                  />
+                </div>
+
+                <div className="card-body mt-5 pt-4">
+                  <h5 className="fw-bold text-dark mt-3">{member.name}</h5>
+                  <p className="text-muted mb-3">{member.role}</p>
+                  <a
+                    href={member.portfolio}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn btn-outline-warning btn-sm fw-semibold"
+                  >
+                    Portfolio <FaExternalLinkAlt className="ms-1" />
+                  </a>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
+
+      {/* Custom Styles */}
+      <style>
+        {`
+          .card {
+            background: #ffffff;
+            transition: transform 0.3s ease;
+          }
+          .card:hover {
+            transform: translateY(-5px);
+          }
+          .btn-outline-warning {
+            border-color: #d4af37;
+            color: #d4af37;
+          }
+          .btn-outline-warning:hover {
+            background-color: #d4af37;
+            color: white;
+          }
+        `}
+      </style>
     </section>
   );
 }
