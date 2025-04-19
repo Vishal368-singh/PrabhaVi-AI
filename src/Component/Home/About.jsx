@@ -68,16 +68,17 @@ function About() {
         </div>
 
         {/* Team Section */}
-        <div className="text-center mb-4">
+        <div className="text-center mb-4 mt-5">
           <h4 className="fw-bold text-dark">👨‍💻 Meet Our Team</h4>
           <p className="text-muted">The minds behind Prabhavi AI</p>
         </div>
 
-        <div className="row justify-content-center">
+        {/* Team Cards */}
+        <div className="row justify-content-center mt-4 g-4">
           {teamMembers.map((member, idx) => (
-            <div className="col-md-4 mb-4" key={idx}>
-              <div className="card border-0 shadow-sm rounded-4 text-center pb-3 position-relative">
-                {/* Profile Image with Circular Crop */}
+            <div className="col-md-5 col-lg-4" key={idx}>
+              <div className="card border-0 shadow-lg rounded-4 text-center pb-3 pt-5 position-relative">
+                {/* Profile Image */}
                 <div
                   className="position-absolute top-0 start-50 translate-middle"
                   style={{
@@ -86,7 +87,8 @@ function About() {
                     borderRadius: "50%",
                     overflow: "hidden",
                     border: "4px solid #fff",
-                    boxShadow: "0 4px 12px rgba(0,0,0,0.15)",
+                    boxShadow: "0 4px 16px rgba(0,0,0,0.15)",
+                    backgroundColor: "#fff",
                   }}
                 >
                   <img
@@ -103,8 +105,8 @@ function About() {
                           : "center",
                       transform:
                         member.name === "Vishal Singh"
-                          ? "scale(1)"
-                          : "scale(1.1)",
+                          ? "scale(1.0)"
+                          : "scale(1.2)",
                     }}
                   />
                 </div>
@@ -130,17 +132,16 @@ function About() {
       {/* Custom Styles */}
       <style>
         {`
-          .card {
-            background: #ffffff;
-            transition: transform 0.3s ease;
-          }
           .card:hover {
-            transform: translateY(-5px);
+            transform: translateY(-4px);
+            transition: all 0.3s ease-in-out;
           }
+
           .btn-outline-warning {
             border-color: #d4af37;
             color: #d4af37;
           }
+
           .btn-outline-warning:hover {
             background-color: #d4af37;
             color: white;
