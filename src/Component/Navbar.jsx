@@ -65,6 +65,11 @@ function Navbar() {
                 Contact
               </Link>
             </li>
+            <li className="nav-item">
+              <Link className="nav-link fw-semibold px-3" to="/contact-us">
+                Contact
+              </Link>
+            </li>
           </ul>
         </div>
       </div>
