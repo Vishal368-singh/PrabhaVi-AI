@@ -1,8 +1,45 @@
-# React + Vite
+# Prabhavi AI
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+AI-powered productivity platform built with React.js, Node.js, MongoDB, and OpenAI APIs.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- AI-powered content generation
+- Image background removal integration
+- Responsive dashboard UI
+- REST API integration
+- Authentication and user management
+- Real-time user interaction workflows
+
+## Tech Stack
+
+### Frontend
+- React.js
+- JavaScript
+- HTML5
+- CSS3
+
+### Backend
+- Node.js
+- Express.js
+
+### Database
+- MongoDB
+
+### APIs & Tools
+- OpenAI API
+- RemoveBG API
+- Git & GitHub
+
+## Architecture
+
+- React frontend communicates with backend REST APIs
+- Node.js handles API orchestration and external service integration
+- MongoDB stores user and application data
+- OpenAI APIs used for AI-driven workflows
+
+## Run Locally
+
+```bash
+npm install
+npm run dev
